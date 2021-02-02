@@ -1,12 +1,17 @@
 import random
-a = random.randrange (1,101) #egy és száz között
-tipp = int(input("Adjon meg egy számot egy és száz között:"))
+b = int(input("Adja meg a véletlenszám alsó határát!:"))
+c = int(input("Adja meg a véletlenszám felső határát!(szám+1):"))
+veletlenszam = random.randrange (b,c) #egy és száz között
+tipp = int(input("Adjon meg egy számot a véletlenszám alsó és felső határa között:"))
 print (tipp)
-if a < tipp:
-    print ("Kisebb")
-else:
-    print ("Nagyobb")
-if a == tipp:
-  print ("Nyertél!")
-else:
-  print ("Vesztettél")
+jatekmod = int(input("Adja meg a játékmódot(1: a játékos tippeli a számítógép számát 2: a számítógép tippeli a játékos számát)"))
+if jatekmod == 1:
+     jatekostipp = 0
+     while veletlenszam != jatekostipp:
+       jatekostipp = int(input("Tippelje meg a számítógép számát:"))
+if jatekmod == 2:
+    szamgeptippeli = 0
+    while(tipp != szamgeptippeli):
+       print("A számítógép tippe:")
+       szamgeptippeli = random.randrange(b,c)
+       print (szamgeptippeli)
